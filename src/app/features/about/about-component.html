@@ -1,0 +1,194 @@
+<!-- ═══════════════════════════════════════════════════════════════════════
+     ABOUT PAGE — SmileCare Dental
+     Sections: Page Hero → Our Story → Mission & Vision → Values → Gallery
+════════════════════════════════════════════════════════════════════════ -->
+
+<!-- ── 1. PAGE HERO ─────────────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="page-hero__bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero__inner" data-animate>
+      <span class="page-hero__label">About Us</span>
+      <h1 class="page-hero__heading">
+        More Than Just a <span class="page-hero__accent">Dental Clinic</span>
+      </h1>
+      <p class="page-hero__sub">
+        For over 12 years, we have been building healthy smiles and lasting relationships with our
+        patients across Lahore.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── 2. OUR STORY ─────────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="story__inner">
+      <!-- Image -->
+      <div class="story__image" data-animate>
+        <img
+          src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=640&q=80"
+          alt="SmileCare Dental founder Dr. Ahmed with a patient"
+          class="story__img"
+          loading="lazy"
+          width="580"
+          height="460"
+        />
+        <!-- Small floating card -->
+        <div class="story__since" aria-hidden="true">
+          <span class="story__since-year">2012</span>
+          <span class="story__since-label">Est. in Lahore</span>
+        </div>
+      </div>
+
+      <!-- Copy -->
+      <div class="story__copy">
+        <div data-animate>
+          <span class="section-label">Our Story</span>
+          <h2 class="story__heading">How SmileCare Began</h2>
+        </div>
+
+        <p class="story__para" data-animate>
+          SmileCare Dental was founded in 2012 by Dr. Ahmed Raza with a single treatment chair and
+          one clear belief — that every person deserves honest, high-quality dental care in a
+          comfortable setting.
+        </p>
+
+        <p class="story__para" data-animate>
+          What started as a small clinic in Gulberg has grown into a full-service dental studio with
+          15 specialists, 8 modern treatment rooms, and over 8,500 patients who trust us with their
+          smiles.
+        </p>
+
+        <p class="story__para" data-animate>
+          Our growth has never changed our core commitment — treating every patient like family and
+          every smile like it matters, because it does.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 3. MISSION & VISION ──────────────────────────────────────────────── -->
+<section class="section section-light">
+  <div class="container">
+    <div class="mv__grid" data-stagger-parent>
+      <!-- Mission -->
+      <div class="mv-card mv-card--mission" data-stagger-child>
+        <div class="mv-card__icon" aria-hidden="true">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="12" r="6" />
+            <circle cx="12" cy="12" r="2" />
+          </svg>
+        </div>
+        <h2 class="mv-card__heading">Our Mission</h2>
+        <p class="mv-card__text">
+          To deliver exceptional dental care that improves the quality of life of our patients —
+          through clinical excellence, compassion, and a commitment to making every visit as
+          comfortable as possible.
+        </p>
+      </div>
+
+      <!-- Vision -->
+      <div class="mv-card mv-card--vision" data-stagger-child>
+        <div class="mv-card__icon" aria-hidden="true">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+        </div>
+        <h2 class="mv-card__heading">Our Vision</h2>
+        <p class="mv-card__text">
+          To be the most trusted dental clinic in Pakistan — where patients feel safe, informed, and
+          genuinely cared for. We want healthy smiles to be accessible to every family in our
+          community.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 4. OUR VALUES ────────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-label">What Drives Us</span>
+      <h2>Our Core Values</h2>
+      <p>
+        These are not just words on a wall — they shape every interaction we have with our patients.
+      </p>
+    </div>
+
+    <div class="values__grid" data-stagger-parent>
+      @for (value of values; track value.title) {
+        <div class="value-card" data-stagger-child>
+          <div class="value-card__icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path [attr.d]="value.icon" />
+            </svg>
+          </div>
+          <h3 class="value-card__title">{{ value.title }}</h3>
+          <p class="value-card__desc">{{ value.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ── 5. CLINIC GALLERY ─────────────────────────────────────────────────── -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-label">Our Space</span>
+      <h2>A Clinic Designed for You</h2>
+      <p>
+        We have invested in creating a calm, modern environment where you feel at ease from the
+        moment you walk in.
+      </p>
+    </div>
+
+    <div class="gallery__grid" data-stagger-parent>
+      @for (image of clinicImages; track image.src; let i = $index) {
+        <div class="gallery__item" [class.gallery__item--tall]="i === 0" data-stagger-child>
+          <img
+            [src]="image.src"
+            [alt]="image.alt"
+            class="gallery__img"
+            loading="lazy"
+            width="600"
+            height="400"
+          />
+        </div>
+      }
+    </div>
+  </div>
+</section>

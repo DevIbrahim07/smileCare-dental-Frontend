@@ -1,0 +1,73 @@
+<header [class]="navbarClass()">
+  <div #shell class="navbar__shell">
+    <div class="navbar__inner">
+      <a
+        routerLink="/"
+        class="navbar__brand"
+        (click)="closeMenu()"
+        aria-label="SmileCare Dental home"
+        data-nav-animate
+      >
+      <span class="navbar__brand-copy">
+        <span class="navbar__brand-name">SmileCare</span>
+        <span class="navbar__brand-tag">Dental Studio</span>
+      </span>
+      </a>
+
+      <nav class="navbar__links" aria-label="Primary navigation">
+        @for (link of navLinks; track link.path) {
+          <a
+            [routerLink]="link.path"
+            routerLinkActive="navbar__link--active"
+            [routerLinkActiveOptions]="{ exact: link.exact ?? false }"
+            class="navbar__link"
+            data-nav-animate
+          >
+            {{ link.label }}
+          </a>
+        }
+      </nav>
+
+      <div class="navbar__actions" data-nav-animate>
+        <a routerLink="/booking" class="btn btn-primary btn-sm">Book Now</a>
+      </div>
+
+      <button
+        type="button"
+        class="navbar__toggle"
+        [class.navbar__toggle--open]="isMenuOpen()"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-controls="mobile-nav"
+        aria-label="Toggle navigation menu"
+        data-nav-animate
+        (click)="toggleMenu()"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  @if (isMenuOpen()) {
+    <div #mobilePanel id="mobile-nav" class="navbar__mobile">
+      <nav class="navbar__mobile-links" aria-label="Mobile navigation">
+        @for (link of navLinks; track link.path) {
+          <a
+            [routerLink]="link.path"
+            routerLinkActive="navbar__mobile-link--active"
+            [routerLinkActiveOptions]="{ exact: link.exact ?? false }"
+            class="navbar__mobile-link"
+            (click)="closeMenu()"
+          >
+            {{ link.label }}
+          </a>
+        }
+      </nav>
+
+      <a routerLink="/booking" class="btn btn-primary navbar__mobile-cta" (click)="closeMenu()">
+        Book Appointment
+      </a>
+    </div>
+  }
+</header>

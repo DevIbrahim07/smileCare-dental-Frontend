@@ -1,0 +1,149 @@
+<!-- ═══════════════════════════════════════════════════════════════════════
+     DOCTORS LIST PAGE — /doctors
+════════════════════════════════════════════════════════════════════════ -->
+
+<!-- ── PAGE HERO ────────────────────────────────────────────────────────── -->
+<section class="dl-hero">
+  <div class="dl-hero__bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="dl-hero__inner">
+      <span class="dl-hero__label">Our Team</span>
+      <h1 class="dl-hero__heading">Meet Our <span class="dl-hero__accent">Expert Doctors</span></h1>
+      <p class="dl-hero__sub">
+        Our team of experienced specialists is committed to delivering exceptional dental care with
+        a gentle, patient-first approach.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FILTER + GRID ─────────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <!-- Filter pills -->
+    <div class="dl-filters" role="tablist" aria-label="Filter doctors by speciality" data-animate>
+      @for (filter of filters; track filter) {
+        <button
+          class="dl-filters__pill"
+          [class.dl-filters__pill--active]="activeFilter() === filter"
+          (click)="setFilter(filter)"
+          role="tab"
+          [attr.aria-selected]="activeFilter() === filter"
+        >
+          {{ filter }}
+        </button>
+      }
+    </div>
+
+    <!-- Results count -->
+    <p class="dl-results" data-animate aria-live="polite">
+      Showing <strong>{{ filteredDoctors().length }}</strong>
+      {{ filteredDoctors().length === 1 ? 'doctor' : 'doctors' }}
+      @if (activeFilter() !== 'All') {
+        <span> — {{ activeFilter() }}</span>
+      }
+    </p>
+
+    <!-- Doctors grid -->
+    <div class="dl-grid">
+      @for (doctor of filteredDoctors(); track doctor.id) {
+        <article class="dl-card" data-animate>
+          <!-- Photo -->
+          <div class="dl-card__img-wrap">
+            <img
+              [src]="doctor.photo"
+              [alt]="'Photo of ' + doctor.name"
+              class="dl-card__img"
+              loading="lazy"
+              width="320"
+              height="280"
+            />
+            <!-- Speciality badge on image -->
+            <span class="dl-card__speciality-badge">
+              {{ doctor.speciality }}
+            </span>
+          </div>
+
+          <!-- Body -->
+          <div class="dl-card__body">
+            <h2 class="dl-card__name">{{ doctor.name }}</h2>
+
+            <!-- Experience + working days -->
+            <div class="dl-card__meta">
+              <span class="dl-card__meta-item">
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                {{ doctor.experience }}
+              </span>
+              <span class="dl-card__meta-sep" aria-hidden="true">·</span>
+              <span class="dl-card__meta-item">
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                {{ doctor.workingDays.join(', ') }}
+              </span>
+            </div>
+
+            <!-- Short bio -->
+            <p class="dl-card__bio">{{ doctor.bio }}</p>
+
+            <!-- Actions -->
+            <div class="dl-card__actions">
+              <a [routerLink]="['/doctors', doctor.id]" class="dl-card__btn dl-card__btn--outline">
+                View Profile
+              </a>
+              <a
+                [routerLink]="['/booking']"
+                [queryParams]="{ doctorId: doctor.id }"
+                class="dl-card__btn dl-card__btn--primary"
+              >
+                Book Now
+              </a>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+
+    <!-- Empty state — if filter has no results -->
+    @if (filteredDoctors().length === 0) {
+      <div class="dl-empty" role="status">
+        <svg
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          aria-hidden="true"
+        >
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <p>
+          No doctors found for <strong>{{ activeFilter() }}</strong>
+        </p>
+        <button class="btn btn-outline-primary" (click)="setFilter('All')">Show All Doctors</button>
+      </div>
+    }
+  </div>
+</section>

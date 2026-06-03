@@ -1,0 +1,116 @@
+.nf-page {
+  position: relative;
+  min-height: calc(100vh - 8rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-block: 5rem;
+  background:
+    radial-gradient(circle at top right, rgba(0, 180, 216, 0.12), transparent 28%),
+    linear-gradient(180deg, #f5faff 0%, #eef6ff 100%);
+
+  &__glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 24%, rgba(0, 180, 216, 0.12), transparent 18%),
+      radial-gradient(circle at 78% 68%, rgba(10, 37, 64, 0.08), transparent 24%);
+    pointer-events: none;
+  }
+
+  &__panel {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin-inline: auto;
+    padding: 2.25rem;
+    border-radius: 32px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(13, 43, 74, 0.08);
+    box-shadow: 0 26px 54px rgba(16, 41, 69, 0.1);
+    backdrop-filter: blur(14px);
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    width: fit-content;
+    padding: 0.42rem 0.92rem;
+    border-radius: 999px;
+    background: rgba(0, 180, 216, 0.12);
+    border: 1px solid rgba(0, 180, 216, 0.22);
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transform: translateZ(22px);
+  }
+
+  &__code {
+    margin: 1rem 0 0.5rem;
+    font-family: var(--font-heading);
+    font-size: clamp(4.5rem, 12vw, 7rem);
+    line-height: 0.95;
+    font-weight: 800;
+    color: var(--color-primary);
+    transform: translateZ(48px);
+  }
+
+  &__title {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.14;
+    color: var(--color-primary);
+    transform: translateZ(34px);
+  }
+
+  &__text {
+    max-width: 58ch;
+    margin: 1rem auto 0;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    transform: translateZ(18px);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.9rem;
+    margin-top: 1.75rem;
+    transform: translateZ(26px);
+  }
+
+  &__note {
+    margin: 1.25rem auto 0;
+    max-width: 52ch;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    transform: translateZ(14px);
+  }
+}
+
+@media (max-width: 639px) {
+  .nf-page {
+    min-height: calc(100vh - 6rem);
+    padding-block: 4rem;
+
+    &__panel {
+      padding: 1.5rem;
+      border-radius: 26px;
+    }
+
+    &__actions {
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}

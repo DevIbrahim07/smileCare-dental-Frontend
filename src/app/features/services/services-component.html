@@ -1,0 +1,172 @@
+<section class="services-hero">
+  <div class="services-hero__glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="services-hero__inner">
+      <div class="services-hero__copy">
+        <span class="services-hero__label">Dental Services</span>
+        <h1 class="services-hero__heading">
+          Modern Dental Care Designed Around Your
+          <span class="services-hero__accent">Smile Goals</span>
+        </h1>
+        <p class="services-hero__text">
+          From preventive checkups to advanced restorative care, SmileCare offers treatment plans
+          that balance clinical precision, patient comfort, and long-term oral health.
+        </p>
+        <div class="services-hero__actions">
+          <a routerLink="/booking" class="btn btn-primary">Book Appointment</a>
+          <a routerLink="/contact" class="btn btn-secondary">Talk to Our Team</a>
+        </div>
+      </div>
+
+      <div class="services-hero__panel">
+        <div class="services-hero__card">
+          <span class="services-hero__card-label">Care Promise</span>
+          <h2 class="services-hero__card-title">Treatment that feels clear, calm, and personal.</h2>
+          <ul class="services-hero__list">
+            <li>Consultation-led recommendations</li>
+            <li>Comfort-first clinical approach</li>
+            <li>Modern equipment and updated techniques</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section services-overview">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">What We Offer</span>
+      <h2>Complete Dental Services Under One Roof</h2>
+      <p>
+        Our service mix is designed to support prevention, pain relief, restoration, and smile
+        enhancement with the same careful standard of care.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      @for (service of serviceCards; track service.title) {
+        <article class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path [attr.d]="service.icon" />
+            </svg>
+          </div>
+          <span class="service-card__highlight">{{ service.highlight }}</span>
+          <h3 class="service-card__title">{{ service.title }}</h3>
+          <p class="service-card__desc">{{ service.desc }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section services-trust">
+  <div class="container">
+    <div class="trust-layout">
+      <div class="trust-layout__intro">
+        <span class="section-label">Why SmileCare</span>
+        <h2>Why Patients Choose SmileCare for Treatment</h2>
+        <p>
+          We focus on more than procedures. Our goal is to make every treatment experience feel
+          informed, comfortable, and trustworthy from consultation to follow-up.
+        </p>
+      </div>
+
+      <div class="trust-grid">
+        @for (point of trustPoints; track point.title) {
+          <article class="trust-card">
+            <h3 class="trust-card__title">{{ point.title }}</h3>
+            <p class="trust-card__desc">{{ point.desc }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light process">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">How It Works</span>
+      <h2>Your Treatment Journey, Step by Step</h2>
+      <p>
+        We keep the process structured and easy to understand so you know what is happening at
+        every stage of care.
+      </p>
+    </div>
+
+    <div class="process-grid">
+      @for (step of processSteps; track step.number) {
+        <article class="process-card">
+          <span class="process-card__number">{{ step.number }}</span>
+          <h3 class="process-card__title">{{ step.title }}</h3>
+          <p class="process-card__desc">{{ step.desc }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section consultation-note">
+  <div class="container">
+    <div class="consultation-note__box">
+      <div>
+        <span class="section-label">Consultation First</span>
+        <h2>Every treatment plan starts with the right assessment</h2>
+        <p>
+          We do not push one-size-fits-all solutions. Your dental needs, schedule, and treatment
+          priorities shape the plan we recommend.
+        </p>
+      </div>
+      <a routerLink="/contact" class="btn btn-outline">Ask About Treatment Options</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light services-faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">FAQs</span>
+      <h2>Common Questions About Our Services</h2>
+      <p>
+        Here are a few things patients usually want to know before they book their consultation.
+      </p>
+    </div>
+
+    <div class="faq-grid">
+      @for (faq of faqs; track faq.question) {
+        <article class="faq-card">
+          <h3 class="faq-card__question">{{ faq.question }}</h3>
+          <p class="faq-card__answer">{{ faq.answer }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section services-cta">
+  <div class="container">
+    <div class="services-cta__panel">
+      <span class="services-cta__eyebrow">Ready When You Are</span>
+      <h2 class="services-cta__title">Book a visit and let’s build the right treatment plan for your smile.</h2>
+      <p class="services-cta__text">
+        Whether you need a routine checkup or help with a specific concern, our team is here to
+        guide you with clear recommendations and gentle care.
+      </p>
+      <div class="services-cta__actions">
+        <a routerLink="/booking" class="btn btn-primary">Book Appointment</a>
+        <a routerLink="/contact" class="btn btn-secondary">Contact SmileCare</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,468 @@
+<!-- ═══════════════════════════════════════════════════════════════════════
+     HOME PAGE — SmileCare Dental
+     Sections: Hero → Stats → Services → Why Us → Doctors → Testimonials → CTA
+════════════════════════════════════════════════════════════════════════ -->
+
+<!-- ── 1. HERO ──────────────────────────────────────────────────────────── -->
+<section class="hero" #heroSection>
+  <!-- Background gradient blobs -->
+  <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
+  <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="hero__inner">
+      <!-- Left: copy -->
+      <div class="hero__copy">
+        <span class="hero__label"> ✦ Trusted Dental Care in Lahore </span>
+
+        <h1 class="hero__heading">
+          Your Perfect Smile
+          <span class="hero__heading-accent">Starts Here</span>
+        </h1>
+
+        <p class="hero__subtext">
+          Expert dentists, modern equipment, and a gentle touch. We make every visit comfortable and
+          every smile beautiful.
+        </p>
+
+        <div class="hero__actions">
+          <a routerLink="/booking" class="btn btn-primary btn-lg">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            Book Appointment
+          </a>
+          <a routerLink="/services" class="btn btn-outline-primary"> Our Services </a>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="hero__trust">
+          <div class="hero__trust-item">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            <span>ISO Certified Clinic</span>
+          </div>
+          <div class="hero__trust-item">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+            <span>15+ Expert Doctors</span>
+          </div>
+          <div class="hero__trust-item">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+            <span>4.9★ Rating</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: image card -->
+      <div class="hero__image">
+        <div class="hero__image-card">
+          <img
+            src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80"
+            alt="SmileCare dental clinic — modern equipment and caring staff"
+            class="hero__image-img"
+            loading="eager"
+            width="600"
+            height="500"
+          />
+          <!-- Floating badge -->
+          <div class="hero__badge hero__badge--top">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            <div>
+              <p class="hero__badge-value">8500+</p>
+              <p class="hero__badge-label">Happy Patients</p>
+            </div>
+          </div>
+          <div class="hero__badge hero__badge--bottom">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+            <div>
+              <p class="hero__badge-value">4.9 / 5.0</p>
+              <p class="hero__badge-label">Patient Rating</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 2. STATS BAR ──────────────────────────────────────────────────────── -->
+<section class="stats" #statsSection>
+  <div class="container">
+    <div class="stats__grid" data-stagger-parent>
+      @for (stat of stats; track stat.label) {
+        <div class="stats__item" data-stagger-child>
+          <span class="stats__value">{{ stat.value }}{{ stat.suffix }}</span>
+          <span class="stats__label">{{ stat.label }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ── 3. SERVICES ───────────────────────────────────────────────────────── -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-label">What We Offer</span>
+      <h2>Comprehensive Dental Services</h2>
+      <p>
+        From routine check-ups to advanced cosmetic procedures, we provide complete dental care for
+        the whole family.
+      </p>
+    </div>
+
+    <div class="services__grid" data-stagger-parent>
+      @for (service of services; track service.title) {
+        <div class="service-card {{ service.color }}" data-stagger-child>
+          <div class="service-card__icon-wrap">
+            <svg
+              width="26"
+              height="26"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path [attr.d]="service.icon" />
+            </svg>
+          </div>
+          <h3 class="service-card__title">{{ service.title }}</h3>
+          <p class="service-card__desc">{{ service.description }}</p>
+          <a routerLink="/services" class="service-card__link">
+            Learn more
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              aria-hidden="true"
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+      }
+    </div>
+
+    <div class="services__cta" data-animate>
+      <a routerLink="/services" class="btn btn-outline-primary"> View All Services </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 4. WHY CHOOSE US ──────────────────────────────────────────────────── -->
+<section class="section why-us">
+  <div class="container">
+    <div class="why-us__inner">
+      <!-- Image side -->
+      <div class="why-us__image" data-animate>
+        <img
+          src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80"
+          alt="Modern dental equipment at SmileCare"
+          class="why-us__img"
+          loading="lazy"
+          width="560"
+          height="480"
+        />
+        <div class="why-us__exp-badge" aria-hidden="true">
+          <span class="why-us__exp-num">12+</span>
+          <span class="why-us__exp-text">Years of<br />Excellence</span>
+        </div>
+      </div>
+
+      <!-- Content side -->
+      <div class="why-us__content">
+        <div class="section-header" style="text-align: left; margin-bottom: 2rem" data-animate>
+          <span class="section-label">Why Choose Us</span>
+          <h2>We Care About Your Smile</h2>
+          <p>
+            Our commitment to excellence means you receive the highest standard of dental care in a
+            comfortable environment.
+          </p>
+        </div>
+
+        <div class="why-us__features" data-stagger-parent>
+          @for (feature of whyFeatures; track feature.title) {
+            <div class="why-feature" data-stagger-child>
+              <div class="why-feature__icon">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path [attr.d]="feature.icon" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="why-feature__title">{{ feature.title }}</h4>
+                <p class="why-feature__desc">{{ feature.desc }}</p>
+              </div>
+            </div>
+          }
+        </div>
+
+        <a routerLink="/about" class="btn btn-primary" style="margin-top: 2rem" data-animate>
+          Learn About Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 5. DOCTORS ────────────────────────────────────────────────────────── -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-label">Our Team</span>
+      <h2>Meet Our Expert Doctors</h2>
+      <p>
+        Our experienced team of dental professionals is dedicated to providing you with exceptional
+        care.
+      </p>
+    </div>
+
+    <div class="doctors__grid" data-stagger-parent>
+      @for (doctor of doctors; track doctor.id) {
+        <div class="doctor-card" data-stagger-child>
+          <div class="doctor-card__img-wrap">
+            <img
+              [src]="doctor.photo"
+              [alt]="'Photo of ' + doctor.name"
+              class="doctor-card__img"
+              loading="lazy"
+              width="300"
+              height="300"
+            />
+          </div>
+          <div class="doctor-card__body">
+            <h3 class="doctor-card__name">{{ doctor.name }}</h3>
+            <p class="doctor-card__speciality">{{ doctor.speciality }}</p>
+            <p class="doctor-card__exp">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              {{ doctor.experience }} experience
+            </p>
+            <a [routerLink]="['/doctors', doctor.id]" class="doctor-card__btn"> View Profile </a>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div style="text-align: center; margin-top: 2.5rem" data-animate>
+      <a routerLink="/doctors" class="btn btn-outline-primary"> Meet All Doctors </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 6. TESTIMONIALS ───────────────────────────────────────────────────── -->
+<section class="section testimonials">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-label">Patient Reviews</span>
+      <h2>What Our Patients Say</h2>
+    </div>
+
+    <div class="testimonials__wrapper" data-animate>
+      <!-- Active testimonial -->
+      <div class="testimonial-card">
+        <!-- Stars -->
+        <div class="testimonial-card__stars" aria-label="5 star rating">
+          @for (star of getStars(activeTestimonialData().rating); track $index) {
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+          }
+        </div>
+
+        <blockquote class="testimonial-card__review">
+          "{{ activeTestimonialData().review }}"
+        </blockquote>
+
+        <div class="testimonial-card__author">
+          <img
+            [src]="activeTestimonialData().avatar"
+            [alt]="activeTestimonialData().name"
+            class="testimonial-card__avatar"
+            loading="lazy"
+            width="48"
+            height="48"
+          />
+          <div>
+            <p class="testimonial-card__name">{{ activeTestimonialData().name }}</p>
+            <p class="testimonial-card__role">{{ activeTestimonialData().role }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="testimonials__controls">
+        <button
+          class="testimonials__arrow"
+          (click)="prevTestimonial()"
+          aria-label="Previous testimonial"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+
+        <!-- Dots -->
+        <div class="testimonials__dots" role="tablist">
+          @for (t of testimonials; track $index) {
+            <button
+              class="testimonials__dot"
+              [class.testimonials__dot--active]="activeTestimonial() === $index"
+              (click)="setTestimonial($index)"
+              [attr.aria-label]="'Testimonial ' + ($index + 1)"
+              role="tab"
+            ></button>
+          }
+        </div>
+
+        <button
+          class="testimonials__arrow"
+          (click)="nextTestimonial()"
+          aria-label="Next testimonial"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 7. CTA BANNER ─────────────────────────────────────────────────────── -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-banner__inner">
+      <div class="cta-banner__copy">
+        <span class="cta-banner__eyebrow">Book Your Visit</span>
+        <h2 class="cta-banner__heading">Let's Plan a Smile You Feel Great About</h2>
+        <p class="cta-banner__sub">
+          From routine checkups to cosmetic treatments, our team is ready to guide you with
+          gentle care, modern equipment, and flexible appointment times.
+        </p>
+        <div class="cta-banner__meta">
+          <span class="cta-banner__pill">Same-day consultations</span>
+          <span class="cta-banner__pill">15+ expert doctors</span>
+          <span class="cta-banner__pill">4.9 patient rating</span>
+        </div>
+      </div>
+      <div class="cta-banner__actions">
+        <a routerLink="/booking" class="btn btn-primary btn-lg"> Book Appointment </a>
+        <a routerLink="/contact" class="btn btn-outline btn-lg"> Talk to Our Team </a>
+      </div>
+    </div>
+  </div>
+</section>

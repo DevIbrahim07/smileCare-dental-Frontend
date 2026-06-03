@@ -1,0 +1,480 @@
+<!-- <section class="contact-hero">
+  <div class="contact-hero__glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="contact-hero__inner">
+      <span class="contact-hero__label">Contact SmileCare</span>
+      <h1 class="contact-hero__heading">
+        We’re Here to Help You
+        <span class="contact-hero__accent">Feel Comfortable Reaching Out</span>
+      </h1>
+      <p class="contact-hero__text">
+        Whether you want to ask a question, discuss treatment options, or plan your visit, our
+        team is ready to guide you with clear and friendly support.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section contact-cards">
+  <div class="container">
+    <div class="contact-cards__grid">
+      @for (card of contactCards; track card.title) {
+        <article class="contact-card">
+          <div class="contact-card__icon" aria-hidden="true">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path [attr.d]="card.icon" />
+            </svg>
+          </div>
+          <span class="contact-card__title">{{ card.title }}</span>
+          <h2 class="contact-card__value">
+            @if (card.title === 'Call Us') {
+              {{ card.value | phoneFormat }}
+            } @else if (card.title === 'Working Hours') {
+              {{ clinicDays }}, {{ clinicOpenTime | timeFormat }} - {{ clinicCloseTime | timeFormat }}
+            } @else {
+              {{ card.value }}
+            }
+          </h2>
+          <p class="contact-card__helper">{{ card.helper }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section-light contact-main">
+  <div class="container">
+    <div class="contact-main__layout">
+      <div class="contact-form">
+        <div class="contact-form__intro">
+          <span class="section-label">Send a Message</span>
+          <h2>Tell us how we can help</h2>
+          <p>
+            Fill out the form below and our team will respond with the right guidance for your
+            question or appointment request.
+          </p>
+        </div>
+
+        <form class="contact-form__grid">
+          <div class="form-group">
+            <label class="form-label" for="contact-name">Full Name</label>
+            <input id="contact-name" class="form-control" type="text" placeholder="Your full name" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-phone">Phone Number</label>
+            <input id="contact-phone" class="form-control" type="tel" placeholder="+92 3XX XXXXXXX" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-email">Email Address</label>
+            <input id="contact-email" class="form-control" type="email" placeholder="you@example.com" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-subject">Subject</label>
+            <input id="contact-subject" class="form-control" type="text" placeholder="How can we help?" />
+          </div>
+
+          <div class="form-group contact-form__message">
+            <label class="form-label" for="contact-message">Message</label>
+            <textarea
+              id="contact-message"
+              class="form-control"
+              rows="6"
+              placeholder="Tell us a little about your question or appointment need"
+            ></textarea>
+          </div>
+
+          <div class="contact-form__actions">
+            <button type="button" class="btn btn-primary">Send Message</button>
+          </div>
+        </form>
+      </div>
+
+      <aside class="contact-support">
+        <div class="contact-support__panel">
+          <span class="section-label">Need Quick Help?</span>
+          <h2 class="contact-support__title">Reach the right team without any confusion.</h2>
+          <p class="contact-support__text">
+            If you are unsure whether to call, email, or visit, our clinic team can help direct
+            you to the best next step quickly.
+          </p>
+
+          <div class="contact-support__items">
+            <div class="contact-support__item">
+              <h3>Appointments</h3>
+              <p>Use the form for general questions or call us directly for urgent booking support.</p>
+            </div>
+
+            <div class="contact-support__item">
+              <h3>Treatment Guidance</h3>
+              <p>Our staff can help you understand whether you should book a consultation first.</p>
+            </div>
+
+            <div class="contact-support__item">
+              <h3>Clinic Visit</h3>
+              <p>We will help you with directions, timings, and anything you need before arriving.</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section contact-location">
+  <div class="container">
+    <div class="contact-location__layout">
+      <div class="contact-location__copy">
+        <span class="section-label">Visit Us</span>
+        <h2>Find SmileCare in Gulberg, Lahore</h2>
+        <p>
+          Our clinic is located in a convenient and accessible part of the city, making it easy for
+          patients and families to visit for appointments and follow-up care.
+        </p>
+
+        <div class="contact-location__details">
+          <div>
+            <span class="contact-location__detail-label">Address</span>
+            <p>Main Boulevard, Gulberg, Lahore</p>
+          </div>
+          <div>
+            <span class="contact-location__detail-label">Hours</span>
+            <p>Monday to Saturday, 9:00 AM to 7:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-map">
+        <div class="contact-map__surface">
+          <iframe
+            class="contact-map__frame"
+            title="SmileCare location in Gulberg, Lahore"
+            src="https://www.google.com/maps?q=Main%20Boulevard%2C%20Gulberg%2C%20Lahore&z=15&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- new -->
+
+<section class="contact-hero">
+  <div class="contact-hero__glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="contact-hero__inner">
+      <span class="contact-hero__label">Contact SmileCare</span>
+      <h1 class="contact-hero__heading">
+        We're Here to Help You
+        <span class="contact-hero__accent">Feel Comfortable Reaching Out</span>
+      </h1>
+      <p class="contact-hero__text">
+        Whether you want to ask a question, discuss treatment options, or plan your visit, our team
+        is ready to guide you with clear and friendly support.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact cards ─────────────────────────────────────────────────────── -->
+<section class="section contact-cards">
+  <div class="container">
+    <div class="contact-cards__grid">
+      @for (card of contactCards; track card.title) {
+        <article class="contact-card">
+          <div class="contact-card__icon" aria-hidden="true">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path [attr.d]="card.icon" />
+            </svg>
+          </div>
+          <span class="contact-card__title">{{ card.title }}</span>
+          <h2 class="contact-card__value">{{ card.value }}</h2>
+          <p class="contact-card__helper">{{ card.helper }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ── Form + Support ────────────────────────────────────────────────────── -->
+<section class="section section-light contact-main">
+  <div class="container">
+    <div class="contact-main__layout">
+      <!-- ── Form panel ──────────────────────────────────────────────────── -->
+      <div class="contact-form">
+        <div class="contact-form__intro">
+          <span class="section-label">Send a Message</span>
+          <h2>Tell us how we can help</h2>
+          <p>
+            Fill out the form below and our team will respond with the right guidance for your
+            question or appointment request.
+          </p>
+        </div>
+
+        <!-- ── Success state ───────────────────────────────────────────── -->
+        @if (submitState() === 'success') {
+          <div class="form-success" role="alert">
+            <div class="form-success__icon" aria-hidden="true">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+            </div>
+            <h3 class="form-success__heading">Message Sent!</h3>
+            <p class="form-success__text">
+              Thank you for reaching out. Our team will get back to you within 24 hours.
+            </p>
+            <button class="btn btn-outline-primary" (click)="resetForm()">
+              Send Another Message
+            </button>
+          </div>
+        }
+
+        <!-- ── Form ───────────────────────────────────────────────────── -->
+        @if (submitState() !== 'success') {
+          <form
+            [formGroup]="contactForm"
+            (ngSubmit)="onSubmit()"
+            class="contact-form__grid"
+            novalidate
+          >
+            <!-- Name -->
+            <div class="form-group">
+              <label class="form-label" for="contact-name">
+                Full Name <span class="form-required" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="contact-name"
+                type="text"
+                formControlName="name"
+                placeholder="Your full name"
+                [class.is-invalid]="showError('name')"
+                class="form-control"
+                autocomplete="name"
+              />
+              @if (showError('name')) {
+                <span class="form-error" role="alert">{{ getError('name') }}</span>
+              }
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+              <label class="form-label" for="contact-phone">Phone Number</label>
+              <input
+                id="contact-phone"
+                type="tel"
+                formControlName="phone"
+                placeholder="03XX XXXXXXX"
+                [class.is-invalid]="showError('phone')"
+                class="form-control"
+                autocomplete="tel"
+              />
+              @if (showError('phone')) {
+                <span class="form-error" role="alert">{{ getError('phone') }}</span>
+              } @else if (field('phone').value) {
+                <span class="form-hint">
+                  Formatted: {{ field('phone').value | phoneFormat }}
+                </span>
+              }
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label class="form-label" for="contact-email">
+                Email Address <span class="form-required" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="contact-email"
+                type="email"
+                formControlName="email"
+                placeholder="you@example.com"
+                [class.is-invalid]="showError('email')"
+                class="form-control"
+                autocomplete="email"
+              />
+              @if (showError('email')) {
+                <span class="form-error" role="alert">{{ getError('email') }}</span>
+              }
+            </div>
+
+            <!-- Subject -->
+            <div class="form-group">
+              <label class="form-label" for="contact-subject">
+                Subject <span class="form-required" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="contact-subject"
+                type="text"
+                formControlName="subject"
+                placeholder="How can we help?"
+                [class.is-invalid]="showError('subject')"
+                class="form-control"
+              />
+              @if (showError('subject')) {
+                <span class="form-error" role="alert">{{ getError('subject') }}</span>
+              }
+            </div>
+
+            <!-- Message — full width -->
+            <div class="form-group contact-form__message">
+              <label class="form-label" for="contact-message">
+                Message <span class="form-required" aria-hidden="true">*</span>
+              </label>
+              <textarea
+                id="contact-message"
+                formControlName="message"
+                rows="6"
+                placeholder="Tell us a little about your question or appointment need"
+                [class.is-invalid]="showError('message')"
+                class="form-control"
+              ></textarea>
+              @if (showError('message')) {
+                <span class="form-error" role="alert">{{ getError('message') }}</span>
+              }
+              <!-- Character hint -->
+              <span class="form-hint">
+                {{ field('message').value?.length ?? 0 }} / 20 characters minimum
+              </span>
+            </div>
+
+            <!-- Submit — full width -->
+            <div class="contact-form__actions">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                [disabled]="submitState() === 'loading'"
+              >
+                @if (submitState() === 'loading') {
+                  <!-- Spinner -->
+                  <svg
+                    class="btn-spinner"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83
+                             M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+                    />
+                  </svg>
+                  Sending…
+                } @else {
+                  Send Message
+                }
+              </button>
+              <p class="form-note"><span aria-hidden="true">*</span> Required fields</p>
+            </div>
+          </form>
+        }
+      </div>
+
+      <!-- ── Support panel ───────────────────────────────────────────────── -->
+      <aside class="contact-support">
+        <div class="contact-support__panel">
+          <span class="section-label">Need Quick Help?</span>
+          <h2 class="contact-support__title">Reach the right team without any confusion.</h2>
+          <p class="contact-support__text">
+            If you are unsure whether to call, email, or visit, our clinic team can help direct you
+            to the best next step quickly.
+          </p>
+
+          <div class="contact-support__items">
+            <div class="contact-support__item">
+              <h3>Appointments</h3>
+              <p>
+                Use the form for general questions or call us directly for urgent booking support.
+              </p>
+            </div>
+            <div class="contact-support__item">
+              <h3>Treatment Guidance</h3>
+              <p>Our staff can help you understand whether you should book a consultation first.</p>
+            </div>
+            <div class="contact-support__item">
+              <h3>Clinic Visit</h3>
+              <p>
+                We will help you with directions, timings, and anything you need before arriving.
+              </p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ── Location + Map ────────────────────────────────────────────────────── -->
+<section class="section contact-location">
+  <div class="container">
+    <div class="contact-location__layout">
+      <div class="contact-location__copy">
+        <span class="section-label">Visit Us</span>
+        <h2>Find SmileCare in Gulberg, Lahore</h2>
+        <p>
+          Our clinic is located in a convenient and accessible part of the city, making it easy for
+          patients and families to visit for appointments and follow-up care.
+        </p>
+        <div class="contact-location__details">
+          <div>
+            <span class="contact-location__detail-label">Address</span>
+            <p>Main Boulevard, Gulberg, Lahore</p>
+          </div>
+          <div>
+            <span class="contact-location__detail-label">Hours</span>
+            <p>
+              Monday to Saturday, {{ clinicOpenTime | timeFormat }} to
+              {{ clinicCloseTime | timeFormat }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-map">
+        <div class="contact-map__surface">
+          <iframe
+            class="contact-map__frame"
+            title="SmileCare location in Gulberg, Lahore"
+            src="https://www.google.com/maps?q=Main%20Boulevard%2C%20Gulberg%2C%20Lahore&z=15&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,391 @@
+// ─── DOCTOR DETAIL PAGE ──────────────────────────────────────────────────────
+
+// ── Not found state ───────────────────────────────────────────────────────────
+.not-found-state {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+
+  &__inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+}
+
+// ── Hero / Profile header ─────────────────────────────────────────────────────
+.detail-hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  overflow: hidden;
+  padding-block: 3.5rem 3rem;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(0, 180, 216, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transform-style: preserve-3d;
+  }
+
+  &__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.65);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: fit-content;
+    transition: color 0.2s ease;
+    transform: translateZ(18px);
+
+    &:hover {
+      color: #ffffff;
+    }
+  }
+
+  &__profile {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+  }
+
+  &__photo-wrap {
+    flex-shrink: 0;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(0, 180, 216, 0.5);
+    box-shadow: 0 0 0 6px rgba(0, 180, 216, 0.1);
+    transform: translateZ(34px);
+
+    @media (max-width: 640px) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  &__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-top: 0.5rem;
+    transform-style: preserve-3d;
+  }
+
+  &__speciality {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: rgba(0, 180, 216, 0.12);
+    border: 1px solid rgba(0, 180, 216, 0.25);
+    border-radius: 999px;
+    padding: 0.25rem 0.75rem;
+    width: fit-content;
+    transform: translateZ(22px);
+  }
+
+  &__name {
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.1;
+    transform: translateZ(44px);
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.25rem;
+    transform: translateZ(20px);
+  }
+
+  &__meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.65);
+
+    svg {
+      color: var(--color-accent);
+      flex-shrink: 0;
+    }
+  }
+
+  &__book-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    background: var(--color-accent);
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    width: fit-content;
+    transition: all 0.2s ease;
+    transform: translateZ(28px);
+
+    &:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 180, 216, 0.3);
+      color: #ffffff;
+    }
+  }
+}
+
+// ── Body layout — 2 columns ───────────────────────────────────────────────────
+.detail-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+  perspective: 1450px;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 340px;
+    gap: 3.5rem;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    transform-style: preserve-3d;
+  }
+
+  &__sidebar {
+    transform-style: preserve-3d;
+  }
+}
+
+// ── Detail sections ───────────────────────────────────────────────────────────
+.detail-section {
+  transform-style: preserve-3d;
+  will-change: transform;
+
+  &__heading {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 0 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--color-border);
+    transform: translateZ(24px);
+  }
+
+  &__text {
+    font-size: 0.9875rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin: 0;
+    transform: translateZ(16px);
+  }
+}
+
+// ── Qualifications list ───────────────────────────────────────────────────────
+.qual-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transform-style: preserve-3d;
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.5;
+    transform: translateZ(16px);
+  }
+
+  &__dot {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    border-radius: 50%;
+    background: rgba(0, 180, 216, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    margin-top: 1px;
+  }
+}
+
+// ── Services tags ─────────────────────────────────────────────────────────────
+.services-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  transform-style: preserve-3d;
+
+  &__item {
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1.5px solid var(--color-border);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text);
+    background: var(--color-bg);
+    transition: all 0.2s ease;
+    transform: translateZ(14px);
+
+    &:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: rgba(0, 180, 216, 0.06);
+    }
+  }
+}
+
+// ── Sidebar cards ─────────────────────────────────────────────────────────────
+.sidebar-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.25rem;
+  transform-style: preserve-3d;
+  will-change: transform;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--cta {
+    background: var(--color-primary);
+    border: none;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 0 1.1rem;
+    transform: translateZ(24px);
+
+    svg {
+      color: var(--color-accent);
+    }
+
+    &--white {
+      color: #ffffff;
+    }
+  }
+
+  &__sub {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin: 0 0 1.25rem;
+    transform: translateZ(16px);
+  }
+
+  &__hours {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+    transform: translateZ(16px);
+
+    svg {
+      color: var(--color-accent);
+      flex-shrink: 0;
+    }
+  }
+
+  &__contact-link {
+    display: block;
+    text-align: center;
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    transform: translateZ(14px);
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}
+
+// ── Day pills ─────────────────────────────────────────────────────────────────
+.day-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  transform-style: preserve-3d;
+}
+
+.day-pill {
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  background: var(--color-bg-light);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  transition: all 0.2s ease;
+  user-select: none;
+  transform: translateZ(14px);
+
+  &--active {
+    background: rgba(0, 180, 216, 0.1);
+    color: var(--color-accent-dark);
+    border-color: rgba(0, 180, 216, 0.35);
+    font-weight: 600;
+  }
+}

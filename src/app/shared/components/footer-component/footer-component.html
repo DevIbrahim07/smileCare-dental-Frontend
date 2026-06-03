@@ -1,0 +1,155 @@
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     FOOTER — SmileCare Dental
+     4-column layout: Brand | Quick Links | Services | Hours
+     Bottom bar: copyright + social icons
+════════════════════════════════════════════════════════════════════════════ -->
+<footer class="footer" #footerRef>
+  <!-- ── Main footer content ─────────────────────────────────────────────── -->
+  <div class="footer__top">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Brand column -->
+        <div class="footer__brand-col" data-footer-animate>
+          <a routerLink="/" class="footer__logo" aria-label="SmileCare Dental home">
+            <div class="footer__logo-text">
+              <span class="footer__logo-name">
+                Smile<span class="footer__logo-accent">Care</span>
+              </span>
+              <span class="footer__logo-tag">Dental Studio</span>
+            </div>
+          </a>
+
+          <!-- Tagline -->
+          <p class="footer__tagline">
+            Providing expert dental care with modern technology and a gentle touch. Your smile is
+            our priority.
+          </p>
+
+          <!-- Contact info -->
+          <ul class="footer__contact" role="list">
+            <li class="footer__contact-item">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>Main Boulevard Gulberg, Lahore</span>
+            </li>
+            <li class="footer__contact-item">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              <a href="tel:+923001234567" class="footer__contact-link">+92 300 1234567</a>
+            </li>
+            <li class="footer__contact-item">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <a href="mailto:info@smilecare.com" class="footer__contact-link">
+                info&#64;smilecare.com
+              </a>
+            </li>
+          </ul>
+
+          <!-- Social icons -->
+          <div class="footer__social" role="list" aria-label="Social media links">
+            @for (social of socialLinks; track social.label) {
+              <a
+                [href]="social.href"
+                class="footer__social-link"
+                [attr.aria-label]="social.label"
+                target="_blank"
+                rel="noopener noreferrer"
+                role="listitem"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path [attr.d]="social.icon" />
+                </svg>
+              </a>
+            }
+          </div>
+        </div>
+
+        <!-- Link columns -->
+        @for (col of columns; track col.heading; let i = $index) {
+          <div class="footer__col" data-footer-animate>
+            <h3 class="footer__col-heading">{{ col.heading }}</h3>
+            <ul class="footer__col-links" role="list">
+              @for (link of col.links; track link.label) {
+                <li>
+                  @if (link.path) {
+                    <a [routerLink]="link.path" class="footer__col-link">
+                      {{ link.label }}
+                    </a>
+                  } @else {
+                    <!-- Hours — no link, just text -->
+                    <span class="footer__col-text">{{ link.label }}</span>
+                  }
+                </li>
+              }
+            </ul>
+
+            <!-- CTA on last column -->
+            @if (i === columns.length - 1) {
+              <a routerLink="/booking" class="footer__book-btn"> Book Appointment </a>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Bottom bar ───────────────────────────────────────────────────────── -->
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="footer__bottom-inner">
+        <p class="footer__copyright">
+          &copy; {{ currentYear() }} SmileCare Dental. All rights reserved.
+        </p>
+        <div class="footer__bottom-links">
+          <a routerLink="/privacy" class="footer__bottom-link">Privacy Policy</a>
+          <span class="footer__bottom-sep" aria-hidden="true">·</span>
+          <a routerLink="/terms" class="footer__bottom-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
